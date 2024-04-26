@@ -46,3 +46,16 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/anal
+on:
+  push:
+    branches: [main]
+    paths:
+    - '**.cs'
+    - '**.csproj'
+  pull_request:
+    branches: [main]
+    paths:
+    - '**.cs'
+    - '**.csproj'
+  schedule:
+    - cron: '0 8 * * 4'
